@@ -1,0 +1,15 @@
+node_modules/
+.env
+.env.local
+local.settings.json
+dist/
+.vscode/
+
+# Azure Functions
+bin/
+obj/
+appsettings.json
+
+# Logs
+*.log
+npm-debug.log*

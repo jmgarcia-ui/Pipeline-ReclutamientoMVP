@@ -1,0 +1,256 @@
+.app-shell {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 32px 18px;
+  background:
+    linear-gradient(120deg, rgba(47, 111, 202, 0.07), transparent 34%),
+    #f6f7f9;
+}
+
+.form-card {
+  width: min(100%, 760px);
+  border: 1px solid #e4e7ec;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 24px 70px rgba(21, 26, 38, 0.09);
+  padding: 34px;
+}
+
+.form-header {
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #2f6fca;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.form-header h1 {
+  margin: 0;
+  color: #111827;
+  font-size: clamp(2.2rem, 7vw, 3.4rem);
+  line-height: 1;
+}
+
+.form-header p:last-child {
+  margin: 14px 0 0;
+  color: #586174;
+}
+
+.cv-form {
+  display: grid;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  color: #273044;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.field-label small {
+  color: #7a8496;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid #cdd5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1d2433;
+  outline: none;
+  padding: 0 13px;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #2f6fca;
+  box-shadow: 0 0 0 4px rgba(47, 111, 202, 0.14);
+}
+
+select {
+  cursor: pointer;
+}
+
+.is-invalid input,
+.is-invalid select,
+.is-invalid.file-upload,
+.consent.is-invalid {
+  border-color: #cc3d3d;
+}
+
+.field-error {
+  color: #b42318;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.file-upload {
+  display: grid;
+  min-height: 98px;
+  cursor: pointer;
+  place-items: center;
+  gap: 6px;
+  border: 1px dashed #a8b4c6;
+  border-radius: 8px;
+  background: #fbfcfe;
+  padding: 18px;
+  text-align: center;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.file-upload:hover {
+  border-color: #2f6fca;
+  background: #f4f8ff;
+}
+
+.file-upload input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.file-upload span {
+  color: #1f5fae;
+  font-weight: 800;
+}
+
+.file-upload strong {
+  max-width: 100%;
+  color: #667085;
+  font-size: 0.9rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 46px;
+  border: 1px solid #e4e7ec;
+  border-radius: 8px;
+  color: #3f495b;
+  padding: 12px 14px;
+  line-height: 1.4;
+}
+
+.consent input {
+  width: 18px;
+  min-width: 18px;
+  height: 18px;
+  min-height: 18px;
+  margin-top: 1px;
+  accent-color: #2f6fca;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+button {
+  min-height: 48px;
+  border: 0;
+  border-radius: 8px;
+  background: #202633;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 800;
+  padding: 0 22px;
+  transition:
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+button:hover {
+  background: #2f6fca;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.submit-message {
+  flex: 1;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-align: right;
+}
+
+.submit-message.success {
+  color: #16784a;
+}
+
+.submit-message.error {
+  color: #b42318;
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    align-items: start;
+    padding: 16px;
+  }
+
+  .form-card {
+    padding: 24px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .submit-message {
+    text-align: left;
+  }
+}
